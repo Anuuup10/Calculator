@@ -1,23 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 .calculator {
-  border: 1px solid rgb(90, 90, 90);
-  width: 200px;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 220px;
+  padding: 16px 14px;
 }
 
 .display {
-  margin: 10px;
-  width: 175px;
-  font-size: 25px;
+  width: 100%;
+  height: 48px;
+  margin: 0 0 14px 0;
+  padding: 8px 12px;
+  font-size: 24px;
+  text-align: right;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  color: #111827;
+  outline: none;
 }
 
-.button-container{
+.display:focus {
+  border-color: #2563eb;
+}
+
+.button-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
 .buttons {
-  width: 45px;
-  height: 45px;
-  margin: 3px;
+  width: 58px;
+  height: 46px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1f2937;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.buttons:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.buttons:active {
+  background-color: #e5e7eb;
+  transform: scale(0.97);
+}
+
+/* Clear button ("C") */
+.buttons:first-child {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  font-weight: 600;
+}
+
+.buttons:first-child:hover {
+  background-color: #fecaca;
+}
+
+/* Operators (+, -, *, /) */
+.buttons:nth-child(4),
+.buttons:nth-child(7),
+.buttons:nth-child(10),
+.buttons:nth-child(13) {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+  font-weight: 600;
+}
+
+.buttons:nth-child(4):hover,
+.buttons:nth-child(7):hover,
+.buttons:nth-child(10):hover,
+.buttons:nth-child(13):hover {
+  background-color: #dbeafe;
+}
+
+/* Equals button ("=") */
+.buttons:nth-child(14) {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  font-weight: 600;
+}
+
+.buttons:nth-child(14):hover {
+  background-color: #1d4ed8;
 }

@@ -1,4 +1,4 @@
-function ButtonsContainer() {
+function ButtonsContainer({onButtonClick}) {
   const buttonNames = [
     "C",
     "1",
@@ -21,7 +21,7 @@ function ButtonsContainer() {
   return (
     <div className="button-container">
       {buttonNames.map((buttons) => {
-        return <button className="buttons">{buttons}</button>;
+        return <button className="buttons" onClick={()=>onButtonClick(buttons)}>{buttons}</button>;
       })}
     </div>
   );
